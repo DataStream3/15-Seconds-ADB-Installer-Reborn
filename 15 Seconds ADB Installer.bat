@@ -2,6 +2,14 @@
 Title 15 Seconds ADB Installer V1.0
 mode con:cols=80 lines=25
 
+:SetRoot
+set root=%cd%
+del CurrentVersion.txt
+cd %root%\Updater\bin
+echo 1.0>>CurrentVersion.txt
+echo 1.0.40>>CurrentVersion.txt
+echo 11.0.0000.00000>>CurrentVersion.txt
+
 :Splashscreen
 color 97
 cls
@@ -29,14 +37,6 @@ echo บ"                                                                         
 echo บ"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""บ
 echo.ศอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
 TIMEOUT /T 3 >nul
-
-:SetRoot
-set root=%cd%
-del CurrentVersion.txt
-cd %root%\Updater\bin
-echo 1.0>>CurrentVersion.txt
-echo 1.0.40>>CurrentVersion.txt
-echo 11.0.0000.00000>>CurrentVersion.txt
 
 :MainMenu
 cd %root%
@@ -76,7 +76,7 @@ IF %ERRORLEVEL% EQU 2 GOTO XDA
 IF %ERRORLEVEL% EQU 3 GOTO InstallADB
 
 :XDA
-start "" "www.BLANK.com"
+start "" "https://forum.xda-developers.com/android/software-hacking/tool-adb-fastboot-drivers-15-adb-t3852757"
 GOTO MainMenu
 
 :InstallADB

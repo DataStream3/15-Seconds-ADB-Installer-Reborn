@@ -1,13 +1,19 @@
-REM ?Datastream 2018, All rights reserved.
-REM 15 Seconds ADB Installer Updater V1.0
 @echo off
+REM Datastream 2018, All rights reserved.
+REM 15 Seconds ADB Installer Updater V1.0
 set root=%cd%
+
+cd %root%
+start /min "" "15 Seconds ADB Installer.bat"
+TIMEOUT /T 2 >nul
+taskkill /F /FI "WINDOWTITLE eq 15 Seconds ADB Installer V1.0" /T
 cd %root%\Updater\bin
 (
   Set /p InstallerCurrent=
   Set /p ADBCurrent=
   Set /p DriversCurrent=
 ) <CurrentVersion.txt
+DEL CurrentVersion.txt
 wget.exe -O UpdateVersion.txt --no-check-certificate "https://drive.google.com/uc?export=download&id=15E-3UmShGcHGB1CEtzpw_hdhdOgy6z6e"
 (
   Set /p InstallerUpdate=
